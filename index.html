@@ -2,46 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-     content="width=device-width, 
-     initial-scale=1.0">
-     <link rel="stylesheet" href="/styles.css">
-    <title>To do list</title>
+    <meta http-equiv="X-UA-Compatible" 
+    content="IE=edge">
+    <meta name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
 </head>
 <body>
     
-<div class="container">
-    
-    <div class="the input">
-
-        <h2>Simple To Do List</h2>
-
-        <input type="text" name="ListItem" placeholder="Enter product">
-    
+    <div class="container">
+        <div id="myDIV" class="header">
+          <h2>My To Do List</h2>
+          <input type="text" id="myInput" placeholder="Enter your item">
+          <span onclick="newElement()" class="addBtn">Add item</span>
+          <span onclick="secondElement()" class="sortBtn">Sort item</span>
+        </div>
         
-        <input onclick="anElement()" id="button" type="button" value="Add">
-    
-        <input id="button" type="button" value="Sort by">
-    </div>
 
-    <ul>
-        <li> </li>
-        <li> </li>
-    </ul>
- 
-</div>
+        <ul id="myUL">
+          
+            
+        </ul>
+    </div> 
 
 
 
-<!-- <h2>Simple To Do List</h2>
-
-<input type="text" name="ListItem" placeholder="Enter product">
-
-
-<input onclick="anElement()" id="button" type="button" value="Add">
-
-<input id="button" type="button" value="Sort by"> -->
-
+    <script src= "/node.js" ></script>
 </body>
 </html>

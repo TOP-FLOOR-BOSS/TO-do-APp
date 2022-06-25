@@ -2,7 +2,8 @@
 var myNodelist = document.getElementsByTagName("li");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("span");
+  var span = document.createElement("");
+  //declaration
   var txt = document.createTextNode("x");
   span.className = "close";
   span.appendChild(txt);
@@ -36,11 +37,12 @@ function newElement() {
   if (inputValue === '') {
     alert("You must write something!");
   } else {
-    document.getElementById("myUL").appendChild(li);
+    document.getElementById("theUL").appendChild(li);
   }
   document.getElementById("myInput").value = "";
 
 
+  //Delete btn
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("x");
   span.className = "close";
@@ -57,16 +59,66 @@ function newElement() {
   }
 };
 
+function secondElement() {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById("theUL");
+  switching = true;
+  
+  while (switching) {
+    switching = false;
+    b = list.getElementsByTagName("LI");
+    for (i = 0; i < (b.length - 1); i++) {
+      shouldSwitch = false;
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+      console.log(b[i].innerHTML);
+    }
+  }
+}
 
-// function secondElement() {
+/*
+
+
+function secondElement() {
     
-//     const teams = [''];
-//     teams.sort(); 
+    const teams = ['Soccer', 'boccer', 'hotter'];
+    teams.sort(); 
   
-//     document.getElementById(secondElement).appendChild(li);
-//     }
-//     document.getElementById("myInput").value = "";
-  
-  
+    document.getElementById(secondElement).appendChild(li);
+    }
+
+    document.getElementById("myInput").value = "  ";
+
+function edit(id){
+  const newTask = prompt('What would u change')
+  const task = items.find((item) => item.id === id);
+  task.item = newTask
+  localStorage.setItem('records',JSON.stringify(items));
+  showData();
+};
+
+
+*/
 
   
+function edit(id){
+  const newTask = prompt('What would u change')
+  const task = items.find((item) => item.id === id);
+  task.item = newTask
+  localStorage.setItem('records',JSON.stringify(items));
+  showData();
+};
+
+
+
+
+
+
+
+
